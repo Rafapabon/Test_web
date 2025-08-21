@@ -36,7 +36,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 100;
@@ -83,6 +83,10 @@ nav a:hover::after {
   transform-origin: left;
 }
 
+nav ul li {
+  position: relative; /* important pour permettre l'affichage du menu dropdown */
+}
+
 
 /****************************************
  * BOUTON « Appel Stratégique »
@@ -111,13 +115,12 @@ nav a:hover::after {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 3rem;
-  padding: 12rem 8% 3rem; /* Réduction ici */
-  margin-top: 4rem;       /* Décale toute la section vers le haut */
+  padding: 8rem 8% 12rem; /* au lieu de 12rem, réduire le haut */
+  margin-top: 0;         /* inutile si le header n’est plus fixe */
 }
 
 .hero-text {
   max-width: 100%;
-  margin-top: 2rem;
 }
 
 .hero-text h1 {
@@ -237,4 +240,100 @@ nav a:hover::after {
     transform: rotate(-10deg) translateX(0);
     opacity: 0.9;
   }
+}
+
+
+/********** CAROUSEL **********/
+.carousel-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px; /* largeur du carrousel */
+  margin: 0 auto;    /* centrer horizontalement */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  animation-play-state: running;
+}
+
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused; /* on stoppe quand la souris est dessus */
+}
+.carousel-item {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.carousel-item img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Menu déroulant */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5em 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5em 1em;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }

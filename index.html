@@ -27,22 +27,38 @@
 </div>>
   
   <!-- le reste du contenu -->
+<!-- ======= NAVIGATION ======= -->
+<header>
+  <div class="logo"><i class="fas fa-bolt"></i> Camping Gadgets Canada</div>
 
-  <!-- ======= NAVIGATION ======= -->
-  <header>
-    <div class="logo"><i class="fas fa-bolt"></i> Camping Gadgets Canada</div>
+  <nav>
+    <ul>
+      <!-- Menu déroulant Services -->
+      <li class="dropdown">
+        <a href="#services" onclick="toggleDropdown(event, 'dropdown-services')">Services</a>
+        <ul id="dropdown-services" class="dropdown-menu">
+          <li><a href="#analyse-technique">Analyse technique</a></li>
+          <li><a href="#formation">Formation</a></li>
+        </ul>
+      </li>
 
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#produits">Produits</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#projets">Projets</a></li>
-      </ul>
-    </nav>
+      <!-- Menu déroulant Produits -->
+      <li class="dropdown">
+        <a href="#produits" onclick="toggleDropdown(event, 'dropdown-produits')">Produits</a>
+        <ul id="dropdown-produits" class="dropdown-menu">
+          <li><a href="#batteries">Batteries</a></li>
+          <li><a href="#inverters">Inverters</a></li>
+        </ul>
+      </li>
 
-    <a href="#appel" class="btn-rounded">Appel Stratégique</a>
-  </header>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#projets">Projets</a></li>
+    </ul>
+  </nav>
+
+  <a href="#appel" class="btn-rounded">Appel Stratégique</a>
+</header>
+
 
   <!-- ======= SECTION HÉRO ======= -->
   <section class="hero">
@@ -58,7 +74,28 @@
   </section>
 </body>
 </html>
+
+<!--- ======= SECTION PARTENAIRE CAROUSEL ==== --->
+<section class="carousel-section">
+  <h2 class="carousel-title">Plusieurs partenaires qui travaillent avec nous</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/aos_logo_cmyk.jpg" alt="Partenaire AO Smith"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Midnite_Solar_Logo_1200x1200.png" alt="Partenaire Midnite Solar"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Samlex%20logo.png" alt="Partenaire Samlex America"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Iota1200x630.png" alt="Partenaire IOTA ENG"></div>
+
+  <!-- Copie les mêmes -->
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/aos_logo_cmyk.jpg" alt="Partenaire AO Smith"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Midnite_Solar_Logo_1200x1200.png" alt="Partenaire Midnite Solar"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Samlex%20logo.png" alt="Partenaire Samlex America"></div>
+  <div class="carousel-item"><img src="https://rafapabon.github.io/Test_web/images/Iota1200x630.png" alt="Partenaire IOTA ENG"></div>
+      
+</div>
+  </div>
+</section>
 <!-- partial -->
-  
+  <script  src="./script.js"></script>
+
 </body>
 </html>
