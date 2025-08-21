@@ -13,6 +13,12 @@
 /****************************************
  * BASE & GÉNÉRAL
  ****************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(to bottom, #fff8f0, #f2f1ec);
@@ -320,6 +326,7 @@ nav ul li {
   padding: 0.5em 1em;
   color: black;
   text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
 .dropdown-menu li a:hover {
